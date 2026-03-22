@@ -36,10 +36,10 @@ export default function ScreenshotGallery() {
                   >
                     {/* Text */}
                     <div className="flex-1 text-center md:text-left">
-                      <h3 className="font-display text-2xl sm:text-3xl font-bold mb-3 text-navy dark:text-white">
+                      <h3 className="font-display text-2xl sm:text-3xl font-bold mb-3 text-[#1A1A2E] dark:text-white">
                         {item.title}
                       </h3>
-                      <p className="text-navy/70 dark:text-white/60 text-lg leading-relaxed">
+                      <p className="text-[#1A1A2E]/70 dark:text-white/60 text-lg leading-relaxed">
                         {item.description}
                       </p>
                     </div>

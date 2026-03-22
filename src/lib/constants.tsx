@@ -58,31 +58,31 @@ export const SHOWCASE_ITEMS = [
     image: "/images/appstore/image1.png",
     title: "Track Everything You're Waiting For",
     description: "See all your waitlists organized by category with real-time status updates.",
-    bg: "bg-dusty-rose dark:bg-dusty-rose/20",
+    bg: "bg-[#F5D5D0] dark:bg-[#3D2A28]",
   },
   {
     image: "/images/appstore/image2.png",
     title: "See Your Progress at a Glance",
     description: "Detailed pipeline view shows exactly where each item stands.",
-    bg: "bg-golden-amber/60 dark:bg-golden-amber/15",
+    bg: "bg-[#F5E6A8] dark:bg-[#3D3520]",
   },
   {
     image: "/images/appstore/image3.png",
     title: "Celebrate Your Win",
     description: "Archive tracks outcomes with visual analytics and success rates.",
-    bg: "bg-sage-teal dark:bg-sage-teal/20",
+    bg: "bg-[#C8DDD8] dark:bg-[#253530]",
   },
   {
     image: "/images/appstore/image4.png",
     title: "Never Miss a Follow-up",
     description: "Smart reminders keep you on top of every waiting item.",
-    bg: "bg-mint-green dark:bg-mint-green/20",
+    bg: "bg-[#C8E6CC] dark:bg-[#253D28]",
   },
   {
     image: "/images/appstore/image5.png",
     title: "Your Personal Waitlist Manager",
     description: "Beautiful onboarding gets you started in seconds.",
-    bg: "bg-warm-beige dark:bg-warm-beige/20",
+    bg: "bg-[#E8D5BA] dark:bg-[#3D3525]",
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const screenshots = [
   "/images/appstore/image1.png",
@@ -11,9 +12,30 @@ const screenshots = [
   "/images/appstore/image5.png",
 ];
 
+const CENTER = 2;
+
+function getCardStyle(index: number, hoveredIndex: number | null) {
+  const offset = index - CENTER;
+  const isHovered = hoveredIndex === index;
+
+  const rotateY = offset * 8;
+  const scale = isHovered ? 1.06 : 1 - Math.abs(offset) * 0.06;
+  const translateZ = isHovered ? 50 : -Math.abs(offset) * 30;
+  const opacity = isHovered ? 1 : 1 - Math.abs(offset) * 0.1;
+
+  return {
+    rotateY,
+    scale,
+    z: translateZ,
+    opacity,
+  };
+}
+
 export default function Hero() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
-    <section className="relative overflow-hidden pt-24 pb-8 md:pt-32 md:pb-16">
+    <section className="relative pt-24 pb-8 md:pt-32 md:pb-16 overflow-x-clip">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-violet/8 blur-[120px]" />
@@ -79,41 +101,45 @@ export default function Hero() {
         {/* Screenshot carousel */}
         <motion.div
           className="mt-16 md:mt-20"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Desktop: perspective fan */}
-          <div className="hidden md:flex items-center justify-center gap-[-20px]" style={{ perspective: "1200px" }}>
+          <div
+            className="hidden md:flex items-center justify-center -space-x-8 lg:-space-x-6"
+            style={{ perspective: "1800px" }}
+          >
             {screenshots.map((src, i) => {
-              const centerIndex = 2;
-              const offset = i - centerIndex;
-              const rotateY = offset * 12;
-              const translateX = offset * 30;
-              const scale = 1 - Math.abs(offset) * 0.08;
-              const zIndex = 5 - Math.abs(offset);
-              const opacity = 1 - Math.abs(offset) * 0.15;
-
+              const style = getCardStyle(i, hovered);
               return (
                 <motion.div
                   key={src}
-                  className="flex-shrink-0"
-                  style={{
-                    transform: `perspective(1200px) rotateY(${rotateY}deg) translateX(${translateX}px) scale(${scale})`,
-                    zIndex,
-                    opacity,
+                  className="flex-shrink-0 cursor-pointer"
+                  style={{ zIndex: hovered === i ? 10 : 5 - Math.abs(i - CENTER) }}
+                  animate={{
+                    rotateY: style.rotateY,
+                    scale: style.scale,
+                    z: style.z,
+                    opacity: style.opacity,
                   }}
-                  whileHover={{ scale: scale + 0.03, opacity: 1 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 25,
+                    mass: 0.8,
+                  }}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
                 >
-                  <div className="phone-frame w-[220px] lg:w-[260px]">
+                  <div className="phone-frame w-[180px] lg:w-[220px] xl:w-[240px]">
                     <Image
                       src={src}
                       alt={`Awaitr screenshot ${i + 1}`}
                       width={520}
                       height={1128}
-                      className="w-full h-auto"
-                      priority={i === centerIndex}
+                      className="w-full h-auto block"
+                      priority={i === CENTER}
                     />
                   </div>
                 </motion.div>
@@ -122,19 +148,25 @@ export default function Hero() {
           </div>
 
           {/* Mobile: scrollable row */}
-          <div className="md:hidden overflow-x-auto scrollbar-hide pb-4">
-            <div className="flex gap-4 px-4 w-max">
+          <div className="md:hidden overflow-x-auto scrollbar-hide pb-4 -mx-4">
+            <div className="flex gap-4 px-6 w-max">
               {screenshots.map((src, i) => (
-                <div key={src} className="phone-frame w-[200px] flex-shrink-0">
+                <motion.div
+                  key={src}
+                  className="phone-frame w-[200px] flex-shrink-0"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                >
                   <Image
                     src={src}
                     alt={`Awaitr screenshot ${i + 1}`}
                     width={520}
                     height={1128}
-                    className="w-full h-auto"
+                    className="w-full h-auto block"
                     priority={i === 0}
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

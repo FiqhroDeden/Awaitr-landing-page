@@ -29,7 +29,7 @@ export default function DownloadCTA() {
               </p>
               <a
                 href="#"
-                className="inline-flex items-center gap-2.5 bg-white text-navy px-7 py-3.5 rounded-2xl text-base font-semibold transition-all hover:shadow-2xl hover:-translate-y-0.5 hover:bg-white/95"
+                className="inline-flex items-center gap-2.5 bg-white text-[#1A1A2E] px-7 py-3.5 rounded-2xl text-base font-semibold transition-all hover:shadow-2xl hover:-translate-y-0.5 hover:bg-white/95"
               >
                 <svg
                   className="w-5 h-5"
