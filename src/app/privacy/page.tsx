@@ -85,10 +85,10 @@ export default function PrivacyPage() {
           <Section title="Contact">
             If you have questions about this privacy policy, contact us at:{" "}
             <a
-              href="mailto:awaitr.app@gmail.com"
+              href="mailto:dedhensupatmo@gmail.com"
               className="text-violet hover:text-violet-dark transition-colors font-medium"
             >
-              awaitr.app@gmail.com
+              dedhensupatmo@gmail.com
             </a>
           </Section>
         </div>

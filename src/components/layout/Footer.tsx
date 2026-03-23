@@ -38,7 +38,7 @@ export default function Footer() {
               Support
             </Link>
             <a
-              href="mailto:awaitr.app@gmail.com"
+              href="mailto:dedhensupatmo@gmail.com"
               className="text-foreground/60 hover:text-foreground transition-colors"
             >
               Contact

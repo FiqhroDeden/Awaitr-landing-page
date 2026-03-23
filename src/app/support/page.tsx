@@ -53,7 +53,7 @@ export default function SupportPage() {
             Reach out and we&apos;ll get back to you as soon as possible.
           </p>
           <a
-            href="mailto:awaitr.app@gmail.com"
+            href="mailto:dedhensupatmo@gmail.com"
             className="inline-flex items-center gap-2 bg-violet hover:bg-violet-dark text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:shadow-lg hover:shadow-violet/25"
           >
             <svg
@@ -69,7 +69,7 @@ export default function SupportPage() {
                 d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
               />
             </svg>
-            awaitr.app@gmail.com
+            dedhensupatmo@gmail.com
           </a>
         </div>
 
