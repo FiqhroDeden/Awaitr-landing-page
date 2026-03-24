@@ -17,7 +17,12 @@ export default function AppInfo() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {APP_INFO.map((info, i) => (
             <AnimateOnScroll key={info.label} delay={i * 80}>
-              <GlassCard className="text-center">
+              <GlassCard className="text-center relative">
+                {info.badge && (
+                  <span className="absolute -top-2 -right-2 bg-gradient-to-r from-coral to-amber text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-sm">
+                    {info.badge}
+                  </span>
+                )}
                 <p className="text-sm text-foreground/45 mb-1 font-medium uppercase tracking-wider">
                   {info.label}
                 </p>

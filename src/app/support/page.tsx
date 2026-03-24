@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FAQ_ITEMS } from "@/lib/constants";
+import { FAQ_ITEMS, APP_STORE_URL } from "@/lib/constants";
 import FAQItem from "@/components/ui/FAQItem";
 
 export const metadata: Metadata = {
@@ -76,7 +76,9 @@ export default function SupportPage() {
         {/* Download CTA */}
         <div className="mt-10 text-center">
           <a
-            href="#"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-violet hover:text-violet-dark font-semibold transition-colors"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

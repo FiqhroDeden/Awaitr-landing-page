@@ -1,3 +1,5 @@
+export const APP_STORE_URL = "https://apps.apple.com/app/awaitr/id6760962108";
+
 export const FEATURES = [
   {
     title: "Smart Pipelines",
@@ -114,10 +116,10 @@ export const FAQ_ITEMS = [
 ];
 
 export const APP_INFO = [
-  { label: "Requirement", value: "iOS 26+" },
-  { label: "Price", value: "Free" },
-  { label: "Size", value: "< 15 MB" },
-  { label: "Developer", value: "Fiqhro Dedhen Supatmo" },
+  { label: "Requirement", value: "iOS 26+", badge: null },
+  { label: "Version", value: "1.0", badge: "New" },
+  { label: "Price", value: "Free", badge: null },
+  { label: "Size", value: "< 15 MB", badge: null },
 ];
 
 export const NAV_LINKS = [

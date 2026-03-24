@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS, APP_STORE_URL } from "@/lib/constants";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -83,7 +83,9 @@ export default function Header() {
 
             {/* Download CTA */}
             <a
-              href="#"
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 bg-violet hover:bg-violet-dark text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all hover:shadow-lg hover:shadow-violet/25"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -129,7 +131,9 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="#"
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 flex items-center justify-center gap-2 bg-violet hover:bg-violet-dark text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-all"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">

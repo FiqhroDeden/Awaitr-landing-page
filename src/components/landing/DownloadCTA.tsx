@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import { APP_STORE_URL } from "@/lib/constants";
 
 export default function DownloadCTA() {
   return (
@@ -28,17 +29,18 @@ export default function DownloadCTA() {
                 waiting for again.
               </p>
               <a
-                href="#"
-                className="inline-flex items-center gap-2.5 bg-white text-[#1A1A2E] px-7 py-3.5 rounded-2xl text-base font-semibold transition-all hover:shadow-2xl hover:-translate-y-0.5 hover:bg-white/95"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:-translate-y-0.5 transition-transform"
+                aria-label="Download on the App Store"
               >
-                <svg
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                <svg className="h-[52px] w-auto" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="120" height="40" rx="6" fill="#fff" />
+                  <path d="M24.769 20.3a4.949 4.949 0 0 1 2.356-4.151 5.066 5.066 0 0 0-3.99-2.158c-1.68-.176-3.308 1.005-4.164 1.005-.872 0-2.19-.988-3.608-.958a5.315 5.315 0 0 0-4.473 2.728c-1.934 3.348-.491 8.269 1.361 10.976.927 1.325 2.01 2.805 3.428 2.753 1.387-.058 1.905-.885 3.58-.885 1.658 0 2.144.885 3.59.852 1.489-.025 2.426-1.332 3.32-2.669a10.96 10.96 0 0 0 1.52-3.092 4.782 4.782 0 0 1-2.92-4.4ZM22.037 12.211a4.872 4.872 0 0 0 1.115-3.49 4.957 4.957 0 0 0-3.208 1.66 4.636 4.636 0 0 0-1.144 3.361 4.1 4.1 0 0 0 3.237-1.53Z" fill="#1A1A2E" />
+                  <text x="42" y="15.5" fill="#1A1A2E" fontFamily="system-ui, -apple-system, sans-serif" fontSize="7.5" fontWeight="400" letterSpacing=".03em">Download on the</text>
+                  <text x="42" y="28" fill="#1A1A2E" fontFamily="system-ui, -apple-system, sans-serif" fontSize="14" fontWeight="600" letterSpacing="-.01em">App Store</text>
                 </svg>
-                Download on the App Store
               </a>
             </div>
           </div>

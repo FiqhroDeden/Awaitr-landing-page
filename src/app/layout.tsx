@@ -19,33 +19,50 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://awaitr.vercel.app"),
-  title: "Awaitr — Your Personal Waitlist Manager",
+  title: "Awaitr — Track Everything You're Waiting For",
   description:
-    "Track job applications, scholarships, pre-orders, permits, and events. One app to manage all your waitlists. Free, private, no account needed.",
+    "Personal waitlist manager for iOS 26. Track jobs, scholarships, pre-orders & more. Free, offline, no account needed.",
   keywords: [
     "waitlist manager",
     "iOS app",
     "job application tracker",
     "personal organizer",
     "waitlist tracker",
+    "iOS 26",
+    "free app",
+    "offline app",
+    "privacy",
   ],
   openGraph: {
-    title: "Awaitr — Your Personal Waitlist Manager",
+    title: "Awaitr — Track Everything You're Waiting For",
     description:
-      "Track everything you're waiting for in one beautiful app. Free. Private. No account needed.",
-    images: ["/images/app-icon.png"],
+      "Personal waitlist manager for iOS 26. Track jobs, scholarships, pre-orders & more. Free, offline, no account needed.",
+    url: "https://awaitr.vercel.app",
+    siteName: "Awaitr",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Awaitr — Track Everything You're Waiting For",
+      },
+    ],
     type: "website",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Awaitr — Your Personal Waitlist Manager",
+    title: "Awaitr — Track Everything You're Waiting For",
     description:
-      "Track everything you're waiting for in one beautiful app.",
-    images: ["/images/app-icon.png"],
+      "Personal waitlist manager for iOS 26. Track jobs, scholarships, pre-orders & more. Free, offline, no account needed.",
+    images: ["/opengraph-image"],
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
+  },
+  alternates: {
+    canonical: "https://awaitr.vercel.app",
   },
 };
 
@@ -73,6 +90,33 @@ export default function RootLayout({
                 } catch(e) {}
               })();
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Awaitr",
+              description:
+                "Personal waitlist manager for iOS 26. Track jobs, scholarships, pre-orders & more.",
+              applicationCategory: "UtilitiesApplication",
+              operatingSystem: "iOS 26",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              url: "https://awaitr.vercel.app",
+              downloadUrl:
+                "https://apps.apple.com/app/awaitr/id6760962108",
+              author: {
+                "@type": "Person",
+                name: "Fiqhro Dedhen Supatmo",
+              },
+              softwareVersion: "1.0",
+            }),
           }}
         />
       </head>
