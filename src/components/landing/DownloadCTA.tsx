@@ -42,6 +42,9 @@ export default function DownloadCTA() {
                   <text x="42" y="28" fill="#1A1A2E" fontFamily="system-ui, -apple-system, sans-serif" fontSize="14" fontWeight="600" letterSpacing="-.01em">App Store</text>
                 </svg>
               </a>
+              <p className="mt-3 text-sm text-white/50">
+                Requires iOS 26 beta &middot; Public release September 2026
+              </p>
             </div>
           </div>
         </AnimateOnScroll>

@@ -1,4 +1,6 @@
 export const APP_STORE_URL = "https://apps.apple.com/app/awaitr/id6760962108";
+export const TWITTER_URL = "https://x.com/fiqhrodedhen";
+export const THREADS_URL = "https://threads.net/@fiqhrodedhen";
 
 export const FEATURES = [
   {
@@ -125,5 +127,6 @@ export const APP_INFO = [
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Screenshots", href: "#screenshots" },
+  { label: "FAQ", href: "#faq" },
   { label: "Privacy", href: "/privacy" },
 ];

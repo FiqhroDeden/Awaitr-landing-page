@@ -107,6 +107,9 @@ export default function Hero() {
                 <text x="42" y="28" fill="#fff" fontFamily="system-ui, -apple-system, sans-serif" fontSize="14" fontWeight="600" letterSpacing="-.01em">App Store</text>
               </svg>
             </a>
+            <p className="mt-3 text-sm text-foreground/40">
+              Requires iOS 26 beta &middot; Public release September 2026
+            </p>
           </motion.div>
         </div>
 
