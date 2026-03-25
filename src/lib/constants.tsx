@@ -1,4 +1,7 @@
 export const APP_STORE_URL = "https://apps.apple.com/app/awaitr/id6760962108";
+export const PRODUCT_HUNT_URL = "https://www.producthunt.com/products/awaitr?utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-awaitr";
+export const PRODUCT_HUNT_BADGE_LIGHT = "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1107023&theme=light&t=1774444588308";
+export const PRODUCT_HUNT_BADGE_DARK = "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1107023&theme=dark&t=1774444588308";
 export const TWITTER_URL = "https://x.com/fiqhrodedhen";
 export const THREADS_URL = "https://threads.net/@fiqhrodedhen";
 

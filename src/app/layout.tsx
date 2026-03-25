@@ -3,6 +3,7 @@ import { Outfit, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ProductHuntBanner from "@/components/layout/ProductHuntBanner";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -121,6 +122,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-body">
+        <ProductHuntBanner />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
