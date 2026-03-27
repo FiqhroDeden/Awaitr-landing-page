@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/structured-data";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ProductHuntBanner from "@/components/layout/ProductHuntBanner";
@@ -94,6 +96,22 @@ export default function RootLayout({
           }}
         />
         <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var lang = localStorage.getItem('awaitr-lang');
+                  if (!lang) {
+                    var nav = navigator.language || '';
+                    lang = (nav === 'id' || nav.startsWith('id-') || nav === 'in') ? 'id' : 'en';
+                  }
+                  document.documentElement.lang = lang;
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -120,12 +138,26 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateOrganizationSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateWebSiteSchema()),
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground font-body">
-        <ProductHuntBanner />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <ProductHuntBanner />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

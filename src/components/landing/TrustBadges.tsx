@@ -2,6 +2,7 @@
 
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { APP_STORE_URL } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const badges = [
   {
@@ -32,37 +33,38 @@ const badges = [
 ];
 
 export default function TrustBadges() {
+  const { t } = useLanguage();
   return (
     <section className="py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-10">
-            {badges.map((badge) => {
+            {badges.map((badge, i) => {
               const content = (
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70">
                   {badge.icon}
-                  {badge.text}
+                  {t(`trust.${i}`)}
                 </span>
               );
 
               return badge.href ? (
                 <a
-                  key={badge.text}
+                  key={i}
                   href={badge.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
                 >
                   {badge.icon}
-                  {badge.text}
+                  {t(`trust.${i}`)}
                 </a>
               ) : (
                 <span
-                  key={badge.text}
+                  key={i}
                   className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70"
                 >
                   {badge.icon}
-                  {badge.text}
+                  {t(`trust.${i}`)}
                 </span>
               );
             })}

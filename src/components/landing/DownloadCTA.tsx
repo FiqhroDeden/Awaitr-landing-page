@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { APP_STORE_URL, PRODUCT_HUNT_URL, PRODUCT_HUNT_BADGE_LIGHT } from "@/lib/constants";
 
 export default function DownloadCTA() {
+  const { t } = useLanguage();
   return (
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -22,11 +24,10 @@ export default function DownloadCTA() {
                 className="mx-auto rounded-2xl shadow-2xl mb-8"
               />
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
-                Ready to track everything?
+                {t("cta.heading")}
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-md mx-auto">
-                Download Awaitr for free and never lose track of what you&apos;re
-                waiting for again.
+                {t("cta.subheading")}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
@@ -59,7 +60,7 @@ export default function DownloadCTA() {
                 </a>
               </div>
               <p className="mt-3 text-sm text-white/50">
-                Requires iOS 26 beta &middot; Public release September 2026
+                {t("cta.requirement")}
               </p>
             </div>
           </div>

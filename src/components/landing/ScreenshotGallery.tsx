@@ -3,17 +3,19 @@
 import Image from "next/image";
 import { SHOWCASE_ITEMS } from "@/lib/constants";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ScreenshotGallery() {
+  const { t } = useLanguage();
   return (
     <section id="screenshots" className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-16">
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            See it in action
+            {t("gallery.heading")}
           </h2>
           <p className="text-foreground/50 text-lg max-w-xl mx-auto">
-            Designed for clarity. Built for speed. Beautiful on every screen.
+            {t("gallery.subheading")}
           </p>
         </AnimateOnScroll>
 
@@ -22,7 +24,7 @@ export default function ScreenshotGallery() {
             const isEven = i % 2 === 0;
             return (
               <AnimateOnScroll
-                key={item.title}
+                key={i}
                 animation={isEven ? "slide-left" : "slide-right"}
                 delay={0}
               >
@@ -37,10 +39,10 @@ export default function ScreenshotGallery() {
                     {/* Text */}
                     <div className="flex-1 text-center md:text-left">
                       <h3 className="font-display text-2xl sm:text-3xl font-bold mb-3 text-[#1A1A2E] dark:text-white">
-                        {item.title}
+                        {t(`gallery.${i}.title`)}
                       </h3>
                       <p className="text-[#1A1A2E]/70 dark:text-white/60 text-lg leading-relaxed">
-                        {item.description}
+                        {t(`gallery.${i}.description`)}
                       </p>
                     </div>
 
@@ -49,7 +51,7 @@ export default function ScreenshotGallery() {
                       <div className="phone-frame w-[220px] sm:w-[260px] mx-auto">
                         <Image
                           src={item.image}
-                          alt={item.title}
+                          alt={t(`gallery.${i}.title`)}
                           width={520}
                           height={1128}
                           className="w-full h-auto"

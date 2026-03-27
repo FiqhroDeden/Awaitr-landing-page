@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { PRODUCT_HUNT_URL } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProductHuntBanner() {
   const [dismissed, setDismissed] = useState(false);
+  const { t } = useLanguage();
 
   if (dismissed) return null;
 
@@ -21,8 +23,8 @@ export default function ProductHuntBanner() {
             <path d="M13.604 8.4h-3.405V12h3.405a1.8 1.8 0 0 0 0-3.6ZM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0Zm1.604 14.4h-3.405V18H7.801V6h5.804a4.2 4.2 0 0 1 0 8.4Z" />
           </svg>
           <span>
-            We&apos;re live on Product Hunt!{" "}
-            <span className="underline underline-offset-2">Support us with an upvote</span>{" "}
+            {t("banner.text")}{" "}
+            <span className="underline underline-offset-2">{t("banner.cta")}</span>{" "}
             <span aria-hidden="true">&rarr;</span>
           </span>
         </span>

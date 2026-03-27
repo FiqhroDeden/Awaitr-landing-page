@@ -1,5 +1,6 @@
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
+import WhyAwaitr from "@/components/landing/WhyAwaitr";
 import TrustBadges from "@/components/landing/TrustBadges";
 import SocialProof from "@/components/landing/SocialProof";
 import ScreenshotGallery from "@/components/landing/ScreenshotGallery";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <Features />
+      <WhyAwaitr />
       <TrustBadges />
       <SocialProof />
       <ScreenshotGallery />

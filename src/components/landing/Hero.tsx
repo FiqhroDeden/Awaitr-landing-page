@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { APP_STORE_URL, PRODUCT_HUNT_URL, PRODUCT_HUNT_BADGE_LIGHT, PRODUCT_HUNT_BADGE_DARK } from "@/lib/constants";
 
 const screenshots = [
@@ -33,6 +34,7 @@ function getCardStyle(index: number, hoveredIndex: number | null) {
 }
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -63,7 +65,7 @@ export default function Hero() {
             />
             {/* Just Launched badge */}
             <span className="absolute -top-2 -right-16 bg-gradient-to-r from-coral to-amber text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg">
-              Just Launched
+              {t("hero.badge")}
             </span>
           </motion.div>
 
@@ -73,8 +75,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Track Everything{" "}
-            <span className="gradient-text">You&apos;re Waiting For</span>
+            {t("hero.title1")}
+            <span className="gradient-text">{t("hero.title2")}</span>
           </motion.h1>
 
           <motion.p
@@ -83,8 +85,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Jobs, scholarships, pre-orders, permits, events — one app to manage
-            all your waitlists. Free. Private. No account needed.
+            {t("hero.subtitle")}
           </motion.p>
 
           <motion.div
@@ -133,7 +134,7 @@ export default function Hero() {
               </a>
             </div>
             <p className="text-sm text-foreground/40">
-              Requires iOS 26 beta &middot; Public release September 2026
+              {t("hero.requirement")}
             </p>
           </motion.div>
         </div>

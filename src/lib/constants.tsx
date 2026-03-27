@@ -128,8 +128,9 @@ export const APP_INFO = [
 ];
 
 export const NAV_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "Screenshots", href: "#screenshots" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Privacy", href: "/privacy" },
+  { label: "Features", href: "#features", tKey: "nav.features" },
+  { label: "Use Cases", href: "/use-cases/job-seekers", tKey: "nav.useCases" },
+  { label: "Compare", href: "/compare", tKey: "nav.compare" },
+  { label: "FAQ", href: "#faq", tKey: "nav.faq" },
+  { label: "Privacy", href: "/privacy", tKey: "nav.privacy" },
 ];
